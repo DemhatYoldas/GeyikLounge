@@ -11,3 +11,11 @@
     <h3>@Model.Name</h3>
     <img src="@Model.ImagePath" alt="@Model.Name" style="max-width:200px;" />
 </div>
+@using (Html.BeginForm("Delete", "Admin", new { id = Model.Id }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken() <!-- Güvenlik için AntiForgeryToken ekleyin -->
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+}

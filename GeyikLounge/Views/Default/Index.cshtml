@@ -13,24 +13,27 @@
 
     <div class="logo">
         <a href="#">
-            <img src="~/Imge/GeyikLounge_logo_web_150x150.png" alt="Logo" />
+            <img src="~/Thema/GeyikLounge_logo_web_150x150.png" alt="Logo" />
         </a>
     </div>
 
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-            @foreach (var product in Model.Products)
+            @foreach (var product in Model)
             {
-                <div class="swiper-slide" onclick="showModal('@product.Name', '@product.Description')">
+                <div class="swiper-slide" onclick="location.href='products.php?id=@product.Id'">
                     <img src="@Url.Content(product.ImagePath)" alt="@product.Name">
                     <span>@product.Name</span>
                 </div>
             }
         </div>
-
-
-        <!-- Add more products as needed -->
+        <!-- Swiper navigation buttons -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
+
+    <!-- Add more products as needed -->
+  
 
     <!-- Modal -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">

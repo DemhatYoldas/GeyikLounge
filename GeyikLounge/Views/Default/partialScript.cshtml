@@ -2,18 +2,39 @@
 <script src="https://cdn.jsdelivr.net/npm/popperjs/core2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 <script>
-      const swiper = new Swiper('.mySwiper', {
-          effect: 'cards',
-          grabCursor: true,
-          loop: true
-      });
+    const swiper = new Swiper('.mySwiper', {
+        effect: 'cards',
+        grabCursor: true,
+        loop: true
+    });
 
-      function showModal(title, description) {
-          const modalTitle = document.getElementById('productModalLabel');
-          const modalBody = document.querySelector('#productModal .modal-body');
-          modalTitle.textContent = title;
-          modalBody.textContent = description;
-          const modal = new bootstrap.Modal(document.getElementById('productModal'));
-          modal.show();
-      }
+    function showModal(title, description) {
+        const modalTitle = document.getElementById('productModalLabel');
+        const modalBody = document.querySelector('#productModal .modal-body');
+        modalTitle.textContent = title;
+        modalBody.textContent = description;
+        const modal = new bootstrap.Modal(document.getElementById('productModal'));
+        modal.show();
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        effect: 'coverflow', // Kartlar kenarlarda küçülerek yer alacak
+        grabCursor: true, // Mouse ile tutma efekti
+        centeredSlides: true, // Kartlar ortada hizalanacak
+        slidesPerView: 'auto', // Kartlar doğal boyutlarıyla gösterilecek
+        coverflowEffect: {
+            rotate: 0, // Kenar kartlar dönmeyecek
+            stretch: 0, // Kenar kartlar birbirine yakın duracak
+            depth: 100, // 3D derinlik
+            modifier: 1, // Etki yoğunluğu
+            slideShadows: false, // Gölge efekti devre dışı
+        },
+        loop: true, // Sonsuz döngü
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 </script>

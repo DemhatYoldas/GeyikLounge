@@ -18,7 +18,8 @@ namespace GeyikLounge.Controllers
         public ActionResult Index()
         {
             //var menus = _context.Categories.ToList();
-            return View();
+            var menu = _context.Menus.ToList();
+            return View(menu);
         }
 
         public PartialViewResult partialHead()

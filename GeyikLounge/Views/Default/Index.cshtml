@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@*Bu alana headpartial koyacan *@
+@Html.Action("partialHead", "Default")
+
+<body>
+
+    <div class="logo">
+        <a href="#">
+            <img src="~/Imge/GeyikLounge_logo_web_150x150.png" alt="Logo" />
+        </a>
+    </div>
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Product 1 -->
+            <!--Bu alana da foreach döngüsü kullanacaksın -->
+
+            <div class="swiper-slide" onclick="showModal('Product 1', 'This is the description for Product 1.')">
+                <img src="~/Imge/200.png" alt="Product 1">
+                <span>Product 1</span>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="swiper-slide" onclick="showModal('Product 2', 'This is the description for Product 2.')">
+                <img src="~/Imge/200.png" alt="Product 2">
+                <span>Product 2</span>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="swiper-slide" onclick="showModal('Product 3', 'This is the description for Product 3.')">
+                <img src="~/Imge/200.png" alt="Product 3">
+                <span>Product 3</span>
+            </div>
+
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel"> Ymek / İçeçek ismi </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Ürünler burada olucak
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*bu alana script kısmı gelecek*@
+    @Html.Action("partialScript", "Default")
+
+
+</body>
+</html>

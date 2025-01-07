@@ -11,6 +11,7 @@ namespace GeyikLounge.Context
     {
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Menu> Menus { get; set; }
-        public DbSet<MenuCategory> MenuCategories { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

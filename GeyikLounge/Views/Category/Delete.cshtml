@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model GeyikLounge.Entities.Category
+
+<h2>Are you sure you want to delete this category?</h2>
+<div>
+    <h3>@Model.Name</h3>
+</div>
+
+@using (Html.BeginForm("Delete", "Category", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index", "Category")" class="btn btn-secondary">Cancel</a>
+}
